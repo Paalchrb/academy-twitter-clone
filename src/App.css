@@ -1,38 +1,287 @@
-.App {
+/* GENERAL STYLES */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  background-color: rgb(29, 65, 29);
+}
+
+
+/* LOGIN VIEW */
+
+.login-container {
+  height: 100vh;
+}
+
+.login-header {
+  background-color: rgb(19, 38, 19);
+  color: #FFF;
+  font-size: 8rem;
   text-align: center;
+  font-weight: 200;
+  padding-bottom: 1rem;
+  box-shadow: 5px rgb(33, 55, 30);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login-form {
+  background-color: rgb(211, 255, 211);
+  border: 2px rgb(19, 38, 19) solid;
+  border-radius: 10px;
+  width: 50vw;
+  margin: 8rem auto;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.login-form h3 {
+  color: rgb(19, 38, 19);
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 2rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.input-fields {
+  display: grid;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  grid-template-columns: 1rem 2fr 3fr 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.label-handle {
+  grid-area: 2 / 2 / 3 / 3;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+.input-handle {
+  grid-area: 2 / 3 / 3 / 4;
+  margin-bottom: 1rem;
+  color: rgb(19, 38, 19);
+}
+.label-name {
+  grid-area: 1 / 2 / 2 / 3;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  margin-left: 3rem;
+}
+.input-name {
+  grid-area: 1 / 3 / 2 / 4;
+  margin-bottom: 1rem;
+  color: rgb(19, 38, 19);
+}
+.input-handle, .input-pw, .input-name, .input-repeatPw {
+  font-size: 1.3rem;
+  width: 80%;
+  border-radius: 6px;
+}
+.input-handle:focus, 
+.input-pw:focus, 
+.inputname:focus, 
+.input-repeatPw:focus {
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.label-pw {
+  grid-area: 3 / 2 / 4 / 3;
+  font-size: 1.3rem;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.input-pw {
+  grid-area: 3 / 3 / 4 / 4;
+  color: rgb(19, 38, 19);
+  margin-bottom: 1rem;
+}
+.label-repeatPw {
+  grid-area: 4 / 2 / 5 / 3;
+  font-size: 1.3rem;
+  margin-left: 3rem;
+}
+
+.input-repeatPw {
+  grid-area: 4 / 3 / 5 / 4;
+  color: rgb(19, 38, 19);
+
+}
+
+.input-submit {
+  grid-area: 4 / 2 / 5 / 4;
+  width: 40%;
+  justify-self: center;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color:white;
+  background-color: rgb(19, 38, 19);
+  border: 2px solid rgb(19, 38, 19);
+  border-radius: 6px;
+  transition: transform 0.3s linear;
+}
+
+.input-submit:focus {
+  outline: none;
+}
+
+.input-submit:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  background-color: rgb(29, 65, 29);
+}
+
+.login-error {
+  margin-top: 1rem;
+  text-align: center;
+  color: rgb(154, 41, 41);
+  font-size: 1.2rem;
+}
+
+.signup-link {
+  color: rgb(154, 41, 41);
+  font-size: 1.2rem;
+}
+
+.signup-link:hover {
+  color: rgb(211, 97, 97);
+}
+
+/* FEED VIEW */
+.feed-subheading {
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  grid-column: 1 / 3;
+  color: #fff;
+}
+
+
+.feed-input-container {
+  width: 55%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-column-gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+
+.feed-input {
+  font-size: 1.3rem;
+  padding: 0.7rem;
+  min-height: 140px;
+  grid-column: 1 / 3;
+  border-radius: 10px;
+}
+
+.feed-input:focus {
+  outline: none;
+}
+
+.tweets-container {
+  width: 55%;
+  margin: 1rem auto;
+}
+
+.tweet {
+  background-color: rgb(211, 255, 211);
+  border: 2px rgb(19, 38, 19) solid;
+  border-radius: 10px;
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(19, 38, 19);
+}
+
+.tweet-timestamp {
+  float: right;
+  margin-right: 1rem;
+}
+
+.tweet-handle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-left: 1rem;
+
+}
+
+.tweet-message {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.tweet-button {
+  grid-column: 1 / 2;
+  color: rgb(19, 38, 19);
+  margin-left:0.4rem;
+  width: 60%;
+  justify-self: left;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  background-color: #FFF;
+  border: 2px solid rgb(19, 38, 19);
+  border-radius: 6px;
+  transition: transform 0.3s linear;
+}
+
+.tweet-button:focus {
+  outline: none;
+}
+
+.tweet-button:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  background-color: rgb(206, 252, 206);
+}
+
+.logout-link {
+  display: block;
+  grid-column: 2 / 3;
+  color: #FFF;
+  text-decoration: none;
+  margin-left: 4.2rem;
+  text-align: center;
+  width: 70%;
+  padding: 0.6rem 0.8rem;
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  background-color: rgb(154, 41, 41);
+  border: 2px solid rgb(19, 38, 19);
+  border-radius: 6px;
+  transition: transform 0.3s linear;
+}
+
+.logout-link:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  background-color: rgb(111, 29, 29);
+}
+
+/* SIGN UP VIEW */
+.signup-submit {
+  grid-area: 6 / 2 / 7 / 4;
+  width: 40%;
+  justify-self: center;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  color:white;
+  background-color: rgb(19, 38, 19);
+  border: 2px solid rgb(19, 38, 19);
+  border-radius: 6px;
+  transition: transform 0.3s linear;
+}
+
+.signup-submit:focus {
+  outline: none;
+}
+
+.signup-submit:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+  background-color: rgb(29, 65, 29);
 }
