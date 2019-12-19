@@ -37,7 +37,7 @@ const getTweetsByUser = async (request, response) => {
   catch (error) {
     console.log(error);
     response.status(404).json({
-      error: `Error - Could not find book with ID: ${id}`,
+      error: `Error - Could not find tweets`,
       result: null
     });
   }
@@ -57,8 +57,8 @@ const postTweet = async (req, res) => {
   } 
   catch (error) {
     console.log(error);
-    response.status(404).json({
-      error: `Error - Could not post tweet from user with id ${id}`,
+    req.status(404).json({
+      error: `Error - Could not post tweet from user with`,
       result: null
     });
   }
@@ -91,7 +91,7 @@ const getUserByHandle = async (req, res) => {
   }
   catch(error) {
     console.log(error);
-    response.status(404).json({
+    res.status(404).json({
       error: `Error - Could not create auth-key for user`,
       result: null
     });
@@ -126,7 +126,7 @@ const postUser = async (req, res) => {
     });
   } catch(error) {
     console.log(error);
-    response.status(401).json({
+    res.status(401).json({
       error: error.message,
       result: null
     });
